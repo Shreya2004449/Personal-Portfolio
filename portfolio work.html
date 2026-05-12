@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work | Portfolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --text-light: #f8fafc;
+            --accent: #38bdf8;
+            --card-bg: #1e293b;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding-top: 80px;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-light) !important;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: #94a3b8 !important;
+            font-weight: 500;
+            margin-left: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent) !important;
+        }
+
+        /* PROJECT CARD */
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.05);
+            background: var(--card-bg);
+            transition: 0.3s;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.92);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: 0.4s ease;
+            padding: 20px;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        footer p {
+            color: #64748b;
+        }
+
+        footer a {
+            color: var(--accent);
+            margin: 0 12px;
+            font-size: 1.4rem;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            color: #94a3b8;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="portfolio.html">Shreya Pandey</a>
+
+        <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="nav">
+            <ul class="navbar-nav">
+                <li><a class="nav-link" href="portfolio.html">Home</a></li>
+                <li><a class="nav-link" href="portfolio about.html">About</a></li>
+                <li><a class="nav-link" href="portfolio services.html">Services</a></li>
+                <li><a class="nav-link active" href="portfolio work.html">Work</a></li>
+                <li><a class="nav-link" href="portfolio contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- PROJECTS -->
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">Featured Projects</h2>
+        <p style="color:#94a3b8">Some of my best work</p>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Crypto -->
+        <div class="col-lg-6 gs-work">
+            <div class="portfolio-item">
+                <img src="images/Screenshot 2026-04-23 132022.png" alt="Crypto Dashboard">
+
+                <div class="portfolio-overlay text-center">
+                    <div>
+                        <h5 class="fw-bold">Crypto Dashboard</h5>
+                        <p class="small mb-2" style="color:#94a3b8">
+                            Track real-time crypto prices with charts
+                        </p>
+                        <p class="small mb-3" style="color:#38bdf8">
+                            React • API • Chart.js
+                        </p>
+
+                        <a href="crypto-dashboard/" target="_blank" class="btn btn-info btn-sm me-2">
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/Shreya2004449/crypto-dashboard.git" target="_blank" class="btn btn-outline-light btn-sm">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Parcel -->
+        <div class="col-lg-6 gs-work">
+            <div class="portfolio-item">
+                <img src="images/Screenshot 2026-04-23 132131.png" alt="Parcel Tracker">
+
+                <div class="portfolio-overlay text-center">
+                    <div>
+                        <h5 class="fw-bold">Parcel Tracker</h5>
+                        <p class="small mb-2" style="color:#94a3b8">
+                            Track parcel delivery status visually
+                        </p>
+                        <p class="small mb-3" style="color:#38bdf8">
+                            React • GSAP • JSON
+                        </p>
+
+                        <a href="parcel-tracker/" target="_blank" class="btn btn-info btn-sm me-2">
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/Shreya2004449/parcel-tracker.git" target="_blank" class="btn btn-outline-light btn-sm">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 Shreya Pandey. All rights reserved.</p>
+    <div>
+        <a href="https://www.instagram.com/sweet__soul_2006?igsh=ZGNhN3Jja25zcnE1"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/shreya-pandey-webdev"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Shreya2004449"><i class="fab fa-github"></i></a>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<script>
+gsap.from(".gs-work", {
+    y: 60,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2
+});
+</script>
+
+</body>
+</html>
